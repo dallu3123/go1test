@@ -44,7 +44,14 @@ int main(int argc, char** argv){
     low_cmd_ros.head[1] = 0xEF;
     low_cmd_ros.levelFlag = LOWLEVEL;
     
-    
+    float leg_position[4][3] = {
+        {0.0, 1.2, -2.0},  // 오른쪽 앞다리 (FR_0, FR_1, FR_2)
+        {0.0, 1.2, -2.0},  // 왼쪽 앞다리 (FL_0, FL_1, FL_2)
+        {0.0, 1.2, -2.0},  // 오른쪽 뒷다리 (RR_0, RR_1, RR_2)
+        {0.0, 1.2, -2.0}   // 왼쪽 뒷다리 (RL_0, RL_1, RL_2)
+    };
+
+
     //go1 초기 설정값 
     for (int i = 0; i < 12; i++)
     {
@@ -80,7 +87,7 @@ int main(int argc, char** argv){
         ros::spinOnce();
         loop_rate.sleep();
     }
-    
+
     return 0;
 
 }
