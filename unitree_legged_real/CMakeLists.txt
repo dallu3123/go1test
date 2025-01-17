@@ -51,3 +51,6 @@ add_executable(twist_sub src/exe/twist_sub.cpp)
 target_link_libraries(twist_sub ${EXTRA_LIBS} ${catkin_LIBRARIES})
 add_dependencies(twist_sub ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 
+add_executable(ros_test_position src/exe/test_position.cpp)
+target_link_libraries(ros_test_position ${EXTRA_LIBS} ${catkin_LIBRARIES})
+add_dependencies(ros_test_position ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
